@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary commit message file
+.git_commit_msg.tmp
