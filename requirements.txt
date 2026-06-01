@@ -1,0 +1,3 @@
+# No heavy dependencies needed. 
+# Built using Python Standard Library (urllib, subprocess) for instant startup.
+# Feel free to expand with rich formatting packages like 'rich' or 'click' in the future.
