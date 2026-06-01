@@ -104,7 +104,7 @@ def main():
             f.write(commit_msg)
         try:
             subprocess.run(f"git commit -F {temp_file}", shell=True, check=True)
-            print("Successfully committed!")
+            print("\n🚀 Successfully committed! Done!")
         finally:
             if os.path.exists(temp_file):
                 os.remove(temp_file)
