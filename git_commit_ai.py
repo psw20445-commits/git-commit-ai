@@ -83,6 +83,7 @@ def main():
         print("Please run: export OPENAI_API_KEY='your-key'")
         sys.exit(1)
         
+    skip_confirm = "--yes" in sys.argv or "-y" in sys.argv
     diff = get_git_diff()
     
     print("Analyzing staged changes with AI...")
@@ -92,7 +93,10 @@ def main():
     print(commit_msg)
     print("--------------------------------\n")
     
-    confirm = input("Do you want to commit these changes with the message above? [y/N]: ").strip().lower()
+    if skip_confirm:
+        confirm = "y"
+    else:
+        confirm = input("Do you want to commit these changes with the message above? [y/N]: ").strip().lower()
     if confirm in ("y", "yes"):
         # Write to temporary file to avoid shell escaping issues with multi-line messages
         temp_file = ".git_commit_msg.tmp"
